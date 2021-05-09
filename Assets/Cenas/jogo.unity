@@ -169,6 +169,64 @@ PrefabInstance:
       objectReference: {fileID: 1542939594}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 867da2ed13811b347a09b4756abcd004, type: 3}
+--- !u!1 &389574188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389574190}
+  - component: {fileID: 389574189}
+  m_Layer: 0
+  m_Name: Pontuacao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &389574189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389574188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6740013f72173c4a96e26994456f1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoPontuar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 679329955}
+        m_TargetAssemblyTypeName: TextoDinamico, Assembly-CSharp
+        m_MethodName: AtualizarTexto
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &389574190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389574188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.009636357, y: -0.55869114, z: -28.742199}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &457752700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 1446858404}
+  pontuacao: {fileID: 389574189}
   prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
     type: 3}
   tempo: 1
@@ -281,6 +340,7 @@ GameObject:
   - component: {fileID: 679329953}
   - component: {fileID: 679329956}
   - component: {fileID: 679329954}
+  - component: {fileID: 679329955}
   m_Layer: 5
   m_Name: TextoPontuacao
   m_TagString: Untagged
@@ -341,6 +401,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0
+--- !u!114 &679329955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679329952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e098742ea333d145ba14e9cd7e927dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &679329956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -394,6 +466,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fbcc97c6e3854a4bbe5058eacc39e19, type: 3}
+--- !u!1 &769455632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769455634}
+  - component: {fileID: 769455633}
+  m_Layer: 0
+  m_Name: ControleDePause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &769455633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769455632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359ca945022992849bcdc02db32c505b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  painelPause: {fileID: 1344085548}
+  escalaDeTempoDuranteOPause: 0.1
+--- !u!4 &769455634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769455632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.009636357, y: -0.55869114, z: -28.742199}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &834785046
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -816,6 +933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 1446858404}
+  pontuacao: {fileID: 389574189}
   prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
     type: 3}
   tempo: 1
@@ -1452,6 +1570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 1446858404}
+  pontuacao: {fileID: 389574189}
   prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
     type: 3}
   tempo: 1
