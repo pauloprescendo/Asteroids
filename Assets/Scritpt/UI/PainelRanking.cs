@@ -12,13 +12,13 @@ public class PainelRanking : MonoBehaviour
 
     private void Start()
     {
-        var listaDePontos = this.ranking.getPontos();
-        for (int i = 0; i < listaDePontos.Count; i++)
+        var listaDeColocados = this.ranking.GetColocados();
+        for (int i = 0; i < listaDeColocados.Count; i++)
         {
             if(i >= 5)
                 break;
             var colocado = GameObject.Instantiate(this.prefabColocado, this.transform);
-            colocado.GetComponent<ItemRanking>().Configurar(i, "Paulo", listaDePontos[i]);
+            colocado.GetComponent<ItemRanking>().Configurar(i, listaDeColocados[i].nome, listaDeColocados[i].pontos);
         }
     }
 }

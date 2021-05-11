@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,13 +11,20 @@ public class Ranking : MonoBehaviour
     private string caminhoParaOArquivo;
 
     [SerializeField]
-    private List<int> pontos;
+    private List<Colocado> listaDeColocados;
 
     private void Awake()
     {
         this.caminhoParaOArquivo = Path.Combine(Application.persistentDataPath, NOME_DO_ARQUIVO);
-        var textoJson = File.ReadAllText(caminhoParaOArquivo);
-        JsonUtility.FromJsonOverwrite(textoJson, this);
+        if (File.Exists(this.caminhoParaOArquivo))
+        {
+            var textoJson = File.ReadAllText(caminhoParaOArquivo);
+            JsonUtility.FromJsonOverwrite(textoJson, this);
+        }
+        else
+        {
+            this.listaDeColocados = new List<Colocado>();
+        }
     }
 
     private void SalvarRanking()
@@ -25,19 +33,56 @@ public class Ranking : MonoBehaviour
         File.WriteAllText(this.caminhoParaOArquivo, textoJson);
     }
 
-    public void AdicionarPontuacao(int ponto)
+    public int AdicionarPontuacao(int pontos, string nome)
     {
-        this.pontos.Add(ponto);
+        var id = this.listaDeColocados.Count * UnityEngine.Random.Range(1, 100000);
+        var novoColocado = new Colocado(nome, pontos, id);
+        this.listaDeColocados.Add(novoColocado);
+        this.listaDeColocados.Sort();
         this.SalvarRanking();
+        return id;
     }
 
     public int Quantidade()
     {
-        return this.pontos.Count;
+        return this.listaDeColocados.Count;
     }
 
-    public ReadOnlyCollection<int> getPontos()
+    public ReadOnlyCollection<Colocado> GetColocados()
     {
-        return this.pontos.AsReadOnly();
+        return this.listaDeColocados.AsReadOnly();
+    }
+
+    public void AlterarNome(string novoNome, int id)
+    {
+        foreach (var item in this.listaDeColocados)
+        {
+            if (item.id == id)
+            {
+                item.nome = novoNome;
+                break;
+            }
+        }
+        SalvarRanking();
+    }
+}
+[Serializable]
+public class Colocado : IComparable
+{
+    public string nome;
+    public int pontos;
+    public int id;
+
+    public Colocado(string nome, int pontos, int id)
+    {
+        this.nome = nome;
+        this.pontos = pontos;
+        this.id = id;
+    }
+
+    public int CompareTo(object obj)
+    {
+        var outroObjeto = obj as Colocado;
+        return outroObjeto.pontos.CompareTo(this.pontos);
     }
 }
