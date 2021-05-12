@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class NovaPontuacao : MonoBehaviour
     [SerializeField]
     private Ranking ranking;
     private Pontuacao pontuacao;
-    private int id;
+    private string id;
 
     private void Start()
     {
