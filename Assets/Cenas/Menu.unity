@@ -1737,6 +1737,7 @@ GameObject:
   - component: {fileID: 1495033870}
   - component: {fileID: 1495033869}
   - component: {fileID: 1495033871}
+  - component: {fileID: 1495033872}
   m_Layer: 0
   m_Name: Trilha
   m_TagString: Trilha
@@ -1867,6 +1868,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b657713c1c2cd747867ccf92e8208e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1495033872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495033868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f021ffbab79064996386ddb2a5bc40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sobrescreverExistente: 0
 --- !u!1 &1510437143
 GameObject:
   m_ObjectHideFlags: 0

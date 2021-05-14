@@ -8,11 +8,22 @@ public class NovaPontuacao : MonoBehaviour
     [SerializeField]
     private TextoDinamico textoPontuacao;
     [SerializeField]
+    private TextoDinamico textoNome;
+    [SerializeField]
     private Ranking ranking;
     private Pontuacao pontuacao;
     private string id;
 
     private void Start()
+    {
+        int totalDePontos = this.GetPontuacao();
+        string nomedaPessoa = this.GetNome();
+        this.textoPontuacao.AtualizarTexto(totalDePontos);
+        this.textoNome.AtualizarTexto(nomedaPessoa);
+        this.id = this.ranking.AdicionarPontuacao(totalDePontos, nomedaPessoa);
+    }
+
+    private int GetPontuacao()
     {
         this.pontuacao = GameObject.FindObjectOfType<Pontuacao>();
         var totalDePontos = -1;
@@ -20,12 +31,22 @@ public class NovaPontuacao : MonoBehaviour
         {
             totalDePontos = this.pontuacao.Pontos;
         }
-        this.textoPontuacao.AtualizarTexto(totalDePontos);
-        this.id = this.ranking.AdicionarPontuacao(totalDePontos, "Nome");
+
+        return totalDePontos;
+    }
+
+    private string GetNome()
+    {
+        if (PlayerPrefs.HasKey("UltimoNome"))
+        {
+            return PlayerPrefs.GetString("UltimoNome");
+        }
+        return "Nome";
     }
 
     public void AlterarNome(string nome)
     {
         this.ranking.AlterarNome(nome, this.id);
+        PlayerPrefs.SetString("UltimoNome", nome);
     }
 }

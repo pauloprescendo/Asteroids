@@ -1265,6 +1265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoPontuacao: {fileID: 82167984}
+  textoNome: {fileID: 55671132}
   ranking: {fileID: 153749131}
 --- !u!114 &1016959375
 MonoBehaviour:
@@ -1374,7 +1375,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: Coloque o seu nome
 --- !u!222 &1151183816
 CanvasRenderer:
   m_ObjectHideFlags: 0
