@@ -306,6 +306,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fbcc97c6e3854a4bbe5058eacc39e19, type: 3}
+--- !u!1 &529180284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 529180286}
+  - component: {fileID: 529180285}
+  m_Layer: 0
+  m_Name: ReservaDeInimigos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &529180285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529180284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1fa2911cf564564f837eb3162d289f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11, type: 3}
+  quantidade: 10
+--- !u!4 &529180286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529180284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 522.2701, y: 346.33047, z: -88.97703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &563932336
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,10 +396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alvo: {fileID: 1446858404}
   pontuacao: {fileID: 389574189}
-  prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
-    type: 3}
   tempo: 1
   raio: 3
+  reservaDeInimigos: {fileID: 529180285}
 --- !u!1 &679329952
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,10 +1004,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alvo: {fileID: 1446858404}
   pontuacao: {fileID: 389574189}
-  prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
-    type: 3}
   tempo: 1
   raio: 3
+  reservaDeInimigos: {fileID: 529180285}
 --- !u!4 &1028723155
 Transform:
   m_ObjectHideFlags: 0
@@ -1597,10 +1640,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alvo: {fileID: 1446858404}
   pontuacao: {fileID: 389574189}
-  prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
-    type: 3}
   tempo: 1
   raio: 3
+  reservaDeInimigos: {fileID: 529180285}
 --- !u!4 &1882994928
 Transform:
   m_ObjectHideFlags: 0
