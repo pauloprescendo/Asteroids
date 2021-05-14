@@ -376,7 +376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563932336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.95, y: -0.62, z: 0}
+  m_LocalPosition: {x: -13.31, y: -5.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -397,7 +397,12 @@ MonoBehaviour:
   alvo: {fileID: 1446858404}
   pontuacao: {fileID: 389574189}
   tempo: 1
-  raio: 3
+  area:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 3.55
+    height: 10
   reservaDeInimigos: {fileID: 529180285}
 --- !u!1 &679329952
 GameObject:
@@ -1005,7 +1010,12 @@ MonoBehaviour:
   alvo: {fileID: 1446858404}
   pontuacao: {fileID: 389574189}
   tempo: 1
-  raio: 3
+  area:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 17.82
+    height: 3.5
   reservaDeInimigos: {fileID: 529180285}
 --- !u!4 &1028723155
 Transform:
@@ -1015,7 +1025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028723153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26, y: 8, z: 0}
+  m_LocalPosition: {x: -9.32, y: 5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1641,7 +1651,12 @@ MonoBehaviour:
   alvo: {fileID: 1446858404}
   pontuacao: {fileID: 389574189}
   tempo: 1
-  raio: 3
+  area:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 4.19
+    height: 10
   reservaDeInimigos: {fileID: 529180285}
 --- !u!4 &1882994928
 Transform:
@@ -1651,7 +1666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882994926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.72, y: -0.19, z: 0}
+  m_LocalPosition: {x: 8.99, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

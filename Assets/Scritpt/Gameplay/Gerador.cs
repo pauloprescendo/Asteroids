@@ -10,7 +10,7 @@ public class Gerador : MonoBehaviour
     [SerializeField]
     private float tempo;
     [SerializeField]
-    private float raio;
+    private Rect area;
     [SerializeField]
     private ReservaDeInimigos reservaDeInimigos;
 
@@ -32,12 +32,19 @@ public class Gerador : MonoBehaviour
 
     private void DefinirPosicaoInimigo(GameObject inimigo)
     {
-        var posicaoAleatoria = new Vector3(
-                        Random.Range(-this.raio, this.raio),
-                        Random.Range(-this.raio, this.raio),
-                        0);
+        var posicaoAleatoria = new Vector2(
+            Random.Range(this.area.x, this.area.x + this.area.width),
+            Random.Range(this.area.y, this.area.y + this.area.height)
+        );
 
-        var posicaoInimigo = this.transform.position + posicaoAleatoria;
+        var posicaoInimigo = (Vector2) this.transform.position + posicaoAleatoria;
         inimigo.transform.position = posicaoInimigo;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(100, 0, 100);
+        var posicao = this.area.position + (Vector2) this.transform.position + this.area.size / 2;
+        Gizmos.DrawWireCube(posicao, this.area.size);
     }
 }
